@@ -1,4 +1,4 @@
-import styles from "/FormattedTime.module.scss";
+import styles from "./FormattedTime.module.scss";
 
 const FormattedTime = ({ time }) => {
   const formatTime = (milliseconds) => {
@@ -7,13 +7,16 @@ const FormattedTime = ({ time }) => {
     const minutes = Math.floor((milliseconds / 1000 / 60) % 60);
     const hours = Math.floor((milliseconds / 1000 / 60 / 60) % 24);
 
-    const time = [
-      hours.toString().padStart(2, "0"),
-      minutes.toString().padStart(2, "0"),
-      seconds.toString().padStart(2, "0"),
-    ].join(":");
+    const time =
+      [
+        hours.toString().padStart(2, "0"),
+        minutes.toString().padStart(2, "0"),
+        seconds.toString().padStart(2, "0"),
+      ].join(":") +
+      "." +
+      millis;
 
-    return time + "." + millis;
+    return time;
   };
 
   return <div className={styles.component}>{formatTime(time)}</div>;

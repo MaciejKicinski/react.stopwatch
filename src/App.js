@@ -1,9 +1,14 @@
-import { useState } from "react";
+import Container from "./components/Container/Container.js";
+import Stopwatch from "./components/Stopwatch/Stopwatch";
 
 const App = () => {
-  const [stopwatchTime, setStopwatchTime] = useState(0);
-  const intervalTime = null;
-  return <div></div>;
+  return (
+    <div>
+      <Container>
+        <Stopwatch />
+      </Container>
+    </div>
+  );
 };
 
 export default App;
